@@ -8,7 +8,7 @@ const Header = (props) => {
 				<ul>
 					<li><a href="/Products" title="">Explore</a></li>
 				</ul>
-					<a href="/checkout" title="Cart" className="icon cart">
+					<a href="/checkout" title="Cart" className="icon cart" data-quantity="5" >
 					<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="687" height="448" viewBox="0 0 687 448">
 					<title></title>
 					<g id="icomoon-ignore">
