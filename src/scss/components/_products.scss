@@ -1,0 +1,16 @@
+.products {
+	text-align: center;
+
+	h2 {
+		font-size: 5rem;
+		margin: 70px 0;
+	}
+
+	.grid {
+		max-width: 1000px;
+		margin: 0	auto;
+		display: grid;
+		grid-template-columns: repeat(3, minmax(300px, 1fr));
+		grid-gap: 20px;
+	}
+}

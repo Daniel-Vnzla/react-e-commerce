@@ -1,6 +1,6 @@
 .products-card {
-	width: 300px;
-	background: linear-gradient(0deg, #eaeaea, #fff, #79aa41);
+	--bg-color: #79aa41;
+	background: linear-gradient(0deg, #eaeaea, #fff, var(--bg-color));
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -27,7 +27,7 @@
 	p {
 		color: #4a4949;
 		font-size: .7rem;
-		margin-bottom: 20px;
+		margin-bottom: 30px;
 	}
 
 	.products-actions {
@@ -90,6 +90,9 @@
 				transform: rotate(90deg);
 				transition-delay: 50ms;
 			}
+		}
+		.price {
+			font-size: 1.4rem;
 		}
 	}
 }

@@ -1,0 +1,41 @@
+.header {
+	position: relative;
+	color: $color;
+	display: flex;
+	padding: 20px;
+	justify-content: space-between;
+	align-items: center;
+	height: 90px;
+	z-index: 2;
+
+	h1 {
+		animation: $fade-in-top;
+		animation-delay: $animation-delay;
+		font-size: $title;
+	}
+
+	nav {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: inherit;
+
+		li {
+			animation: $fade-in-top;
+			animation-delay: $animation-delay * 2;
+
+			a {
+				padding: 5px 10px;
+				margin-right: 50px;
+			}
+		}		 
+		
+		.icon svg {
+			animation: $fade-in-top;
+			animation-delay: $animation-delay * 3;
+			padding: 10px;
+			width: 60px;
+			height: 60px;
+		}
+	}
+}
