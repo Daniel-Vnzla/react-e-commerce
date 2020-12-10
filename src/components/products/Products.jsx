@@ -1,5 +1,5 @@
 import React from 'react';
-import ProductsCard from 'ProductCard.jsx';
+import ProductCard from './ProductCard.jsx';
 
 const Products = (props) => {
   return (
