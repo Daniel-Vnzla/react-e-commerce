@@ -31,7 +31,7 @@ const App = (props) => {
 
   return (
     <main>
-      <Header />
+      <Header totalCartItems={cart.total_items}/>
       <Products products={products} onAddToCart={handleAddToCart} />
     </main>
   )

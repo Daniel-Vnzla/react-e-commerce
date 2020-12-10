@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Header = (props) => {
+const Header = ({ totalCartItems }) => {
   return (
     <header className="header">
 			<h1><a href="/" title="E-Commerce">E-Commerce</a></h1>
@@ -8,7 +8,7 @@ const Header = (props) => {
 				<ul>
 					<li><a href="/Products" title="">Explore</a></li>
 				</ul>
-					<a href="/checkout" title="Cart" className="icon cart" data-quantity="5" >
+					<a href="/checkout" title="Cart" className="icon cart" data-quantity={totalCartItems} >
 					<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="687" height="448" viewBox="0 0 687 448">
 					<title></title>
 					<g id="icomoon-ignore">
