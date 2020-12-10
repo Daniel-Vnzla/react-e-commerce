@@ -2,17 +2,22 @@
 	--bg-color: #79aa41;
 	background: linear-gradient(0deg, #eaeaea, #fff, var(--bg-color));
 	display: flex;
-	justify-content: center;
+	justify-content: space-between;
 	align-items: center;
 	flex-direction: column;
 	padding: 20px;
 	border-radius: $border-radius;
 	box-shadow: 1px 1px 10px 2px rgba(0,0,0, .3);
+	min-height: 500px;
 
 	img {
+		opacity: 0;
 		width: 60%;
+		height: 200px;
 		margin-bottom: 20px;
-		transition: $transition-time transform;
+		transition: 
+			$transition-time transform,
+			$transition-time opacity;
 	}
 
 	&:hover img {
@@ -43,7 +48,7 @@
 			justify-content: center;
 			width: 40px;
 			height: 40px;
-			background: #79aa41;
+			background: var(--bg-color);
 			font-weight: bold;
 			color: #fff;
 			border-radius: $border-radius;

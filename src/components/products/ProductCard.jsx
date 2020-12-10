@@ -1,13 +1,13 @@
 import React from 'react';
 
-const ProductCard = ({ product }) => {
+const ProductCard = ({ product, onAddToCart }) => {
   return (
-    <div className="products-card" style={{"--bg-color": product.color }}>
-			<img src={product.imgUrl} alt="texto" />
-			<h3>{product.title}</h3>
+    <div className="products-card" style={{ "--bg-color": product.variants[0].name }}>
+			<img onLoad={({ target }) => target.style.opacity = 1 } src={product.media.source} alt="texto" />
+			<h3>{product.name}</h3>
 			<p>{product.description}</p>
 			<div className="products-actions">
-				<button> 
+				<button onClick={() => onAddToCart(product.id, 1) }> 
 					<div className="icon plus">
 						<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 768 768">
 						<title></title>
@@ -20,7 +20,7 @@ const ProductCard = ({ product }) => {
 						ADD TO CART
 					</span>
 				</button>
-				<strong className="price">3350$</strong>
+				<strong className="price">{product.price.formatted_with_symbol}</strong>
 			</div>
 		</div>
   )
