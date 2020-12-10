@@ -1,0 +1,96 @@
+.products-card {
+	width: 300px;
+	background: linear-gradient(0deg, #eaeaea, #fff, #79aa41);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	padding: 20px;
+	border-radius: $border-radius;
+	box-shadow: 1px 1px 10px 2px rgba(0,0,0, .3);
+
+	img {
+		width: 60%;
+		margin-bottom: 20px;
+		transition: $transition-time transform;
+	}
+
+	&:hover img {
+		transform: scale(1.025);
+	}
+
+	h3 {
+		font-size: 1.2rem;
+		margin-bottom: 20px;
+	}
+
+	p {
+		color: #4a4949;
+		font-size: .7rem;
+		margin-bottom: 20px;
+	}
+
+	.products-actions {
+		display: flex;
+		width: 100%;
+		align-items: center;
+		justify-content: space-between;
+
+		button {
+			position: relative;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 40px;
+			height: 40px;
+			background: #79aa41;
+			font-weight: bold;
+			color: #fff;
+			border-radius: $border-radius;
+			overflow: hidden;
+			transition: $transition-time width;
+			transition-delay: 200ms;
+
+			.icon {
+				position: absolute;
+				top: 0;
+				left: 0;
+				padding: 5px;
+				width: 40px;
+				height: 40px;
+				z-index: 2;
+				transition: $transition-time transform;
+				transition-delay: 200ms;
+
+			}
+
+			span {
+				font-size: .6rem;
+				opacity: 0;
+				transform: translateX(-10px);
+				margin-left: 25px;
+				transition: 
+					$transition-time opacity,
+					$transition-time transform;
+				transition-delay: 50ms;
+			}
+
+			&:hover {
+				width: 140px;
+				transition-delay: 100ms;
+			}
+
+			&:hover span {
+				opacity: 1;
+				transform: translateX(0);
+				transition-delay: 200ms;
+			}
+
+			&:hover .icon {
+				transform: rotate(90deg);
+				transition-delay: 50ms;
+			}
+		}
+	}
+}
+

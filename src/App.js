@@ -1,9 +1,12 @@
 import React from 'react';
+import "./scss/styles.scss";
+
+import { Products } from './components';
 
 const App = (props) => {
   return (
     <div>
-      E-commerce
+      <Products />
     </div>
   )
 }

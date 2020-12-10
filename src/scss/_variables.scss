@@ -1,0 +1,58 @@
+$bg-color: linear-gradient(#2746da, #000063);
+$color: #fff;
+$title: 2rem;
+$transition-time: 300ms;
+$border-radius: 25px;
+
+$animation-delay: 100ms;
+$animation-duration: 800ms;
+$fade-in-top: $animation-duration cubic-bezier(.25, .25, .25, 1.25) both fade-in-top;
+$fade-in-right: $animation-duration cubic-bezier(.25, .25, .25, 1.25) both fade-in-right;
+$fade-in-left: $animation-duration cubic-bezier(.25, .25, .25, 1.25) both fade-in-left;
+$fade-in-bottom: $animation-duration cubic-bezier(.25, .25, .25, 1.25) both fade-in-bottom;
+
+
+$translate: 20px;
+@keyframes fade-in-top {
+	from {
+		opacity: 0;
+		transform: translateY(-$translate);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@keyframes fade-in-bottom {
+	from {
+		opacity: 0;
+		transform: translateY($translate);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@keyframes fade-in-right {
+	from {
+		opacity: 0;
+		transform: translateX($translate);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@keyframes fade-in-left {
+	from {
+		opacity: 0;
+		transform: translateY(-$translate);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
