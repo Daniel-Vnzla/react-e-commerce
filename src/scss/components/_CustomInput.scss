@@ -1,45 +1,46 @@
 .custom-input {
-position: relative;
+	margin-top: 20px;
+	position: relative;
 
-select,
-input {
-	width: 100%;
-	font-size: 1rem;
-	padding: 12px 15px;
-	border: none;
-	background: #ddd;
-	border-radius: 5px;
-	outline: none;
-}
+	select,
+	input {
+		width: 100%;
+		font-size: 1rem;
+		padding: 12px 15px;
+		border: none;
+		background: #ddd;
+		border-radius: 5px;
+		outline: none;
+	}
 
-select ~ label {
-	font-size: .7rem;
-	top: -22px;
-	left: 5px;
-	color: #6b6a6a;
-	transform: translateY(0);
-}
+	select ~ label {
+		font-size: .7rem;
+		top: -22px;
+		left: 5px;
+		color: #6b6a6a;
+		transform: translateY(0);
+	}
 
-input:valid ~ label,
-input:focus ~ label {
-	font-size: .6rem;
-	top: -8px;
-	color: #000;
-	transform: translateY(0);
-}
+	input:valid ~ label,
+	input:focus ~ label {
+		font-size: .6rem;
+		top: -8px;
+		color: #000;
+		transform: translateY(0);
+	}
 
 
-label {
-	color: #6b6a6a;
-	position: absolute;
-	top: 50%;
-	left: 15px;
-	pointer-events: none;
-	transform: translateY(-50%);
-	transition: 
-		$transition-time font-size,
-		$transition-time top,
-		$transition-time color,
-		$transition-time transform;
-}
+	label {
+		color: #6b6a6a;
+		position: absolute;
+		top: 50%;
+		left: 15px;
+		pointer-events: none;
+		transform: translateY(-50%);
+		transition: 
+			$transition-time font-size,
+			$transition-time top,
+			$transition-time color,
+			$transition-time transform;
+	}
 }

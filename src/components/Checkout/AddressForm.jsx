@@ -81,7 +81,7 @@ const AddressForm = ({ checkoutToken }) => {
 					label="Shipping Option" 
 					options={formattedShippingOptions} />
 			</div>
-			<div className="form-actions">
+			<div className="address-form-actions">
 			  <Link to="/cart">Back to Cart</Link>			
 			  <button type="submit">Checkout</button>			
 			</div>
