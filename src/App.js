@@ -35,6 +35,11 @@ const App = (props) => {
     setCart(cart);
   }
 
+  const handleEmptyCart = async () => {
+    const { cart } = await commerce.cart.empty(productId);
+    setCart(cart)
+  }
+
   useEffect(() => {
     fetchProducts();
     fetchCart()
