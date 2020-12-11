@@ -5,7 +5,7 @@ const CustomSelect = ({ options, label, name, onChange }) => {
   	<div className="custom-input">			
 			<select id={name} name={name} onChange={onChange}>
 				{options.map(({ id, label })=> (
-					<option key={id} value={label}>{label}</option>
+					<option key={id} value={id}>{label}</option>
 					))}
 			</select>
 			<label htmlFor={name}>
