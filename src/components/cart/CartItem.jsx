@@ -1,6 +1,6 @@
 import React from 'react';
 
-const CartItem = ({ item }) => {
+const CartItem = ({ item, handleUpdateCartQty, handleRemoveFromCart }) => {
   return (
 		<div className="product-card-vertical">
 			<img src={item.media.source} alt="imagen" />
@@ -10,12 +10,12 @@ const CartItem = ({ item }) => {
 			</div>
 			<strong className="price">{item.line_total.formatted_with_symbol}</strong>
 			<div className="product-card-vertical-quantity-controls">
-				<button>-</button>
-				<input type="number" min="1" value={item.quantity} />
-				<button>+</button>
+				<button onClick={() => handleUpdateCartQty(item.id, item.quantity - 1) }>-</button>
+				<input type="number" min="1" max="99" value={item.quantity} onChange={({ target }) => handleUpdateCartQty(item.id, target.value )} />
+				<button onClick={() => handleUpdateCartQty(item.id, item.quantity + 1) }>+</button>
 			</div>
 			<div className="product-card-vertical-actions">
-				<button>
+				<button onClick={() => handleRemoveFromCart(item.id)}>
 			
 					<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 768 768">
 					<title></title>
