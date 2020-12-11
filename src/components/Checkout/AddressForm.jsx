@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { commerce } from '../../lib/commerce.js';
+import { Link } from 'react-router-dom';
 
 import CustomInput from './CustomInput.jsx';
 import CustomSelect from './CustomSelect.jsx';
@@ -81,7 +82,7 @@ const AddressForm = ({ checkoutToken }) => {
 					options={formattedShippingOptions} />
 			</div>
 			<div className="form-actions">
-			  <Link to="/cart">Checkout</Link>			
+			  <Link to="/cart">Back to Cart</Link>			
 			  <button type="submit">Checkout</button>			
 			</div>
 		</form>
