@@ -14,8 +14,6 @@ const AddressForm = ({ checkoutToken }) => {
 
 	const options = [1,2,3];
 
-	console.log(shippingCountry)
-
   const fetchShippingCountries = async (checkoutTokenId) => {
     const { countries } = await commerce.services.localeListShippingCountries(checkoutTokenId);
 
@@ -25,9 +23,23 @@ const AddressForm = ({ checkoutToken }) => {
     setShippingCountry(Object.keys(countries)[0]);
   };
 
+  const fetchSubdivisions = async (countryCode) => {
+    const { subdivisions } = await commerce.services.localeListSubdivisions(countryCode);
+
+    const formattedSubdivisions = Object.entries(subdivisions).map(([code, name]) => ({ id: code, label: name }))
+
+    setShippingSubdivisions(formattedSubdivisions);
+    setShippingSubdivision(Object.keys(subdivisions)[0]);
+  };
+
+
   useEffect(() => {
   	fetchShippingCountries(checkoutToken.id);
   },[])
+
+  useEffect(() => {
+  	 if(shippingCountry) fetchSubdivisions(shippingCountry);
+  },[shippingCountry])
 
   return (
     <form className="form" >
@@ -46,9 +58,10 @@ const AddressForm = ({ checkoutToken }) => {
 					label="Shipping Country" 
 					options={shippingCountries} />
 				<CustomSelect 
+					onChange={({ target }) => setShippingSubdivision(target.value)}
 					name="ShippingSubdivision"
 					label="Shipping Subdivision" 
-					options={options} />
+					options={shippingSubdivisions} />
 			</div>
 			  <button type="submit">Checkout</button>			
 		</form>
