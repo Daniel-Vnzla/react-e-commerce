@@ -11,7 +11,7 @@ const CartItem = ({ item, handleUpdateCartQty, handleRemoveFromCart }) => {
 			<strong className="price">{item.line_total.formatted_with_symbol}</strong>
 			<div className="product-card-vertical-quantity-controls">
 				<button onClick={() => handleUpdateCartQty(item.id, item.quantity - 1) }>-</button>
-				<input type="number" min="1" max="99" value={item.quantity} onChange={({ target }) => handleUpdateCartQty(item.id, target.value )} />
+				<input type="number" min="1" max="9999" value={item.quantity} onChange={({ target }) => handleUpdateCartQty(item.id, target.value > 9999 ? 9999 : target.value )} />
 				<button onClick={() => handleUpdateCartQty(item.id, item.quantity + 1) }>+</button>
 			</div>
 			<div className="product-card-vertical-actions">

@@ -1,10 +1,11 @@
 import React from 'react';
 import CartItem from './CartItem.jsx';
+import { Link } from 'react-router-dom';
 
 const Cart = ({ cart, handleUpdateCartQty, handleRemoveFromCart, handleEmptyCart }) => {
 
 	if (!cart.line_items) return "loading..."
-
+		console.log(cart)
   return (
     <section>
 		<div className="cart">
@@ -13,7 +14,7 @@ const Cart = ({ cart, handleUpdateCartQty, handleRemoveFromCart, handleEmptyCart
 				<div className="grid-checkout">
 					<div className="grid-checkout-card">
 						<h3>Total</h3>
-						<strong>3555$</strong>
+						<strong>{cart.subtotal.formatted_with_symbol}</strong>
 						<a href="/checkout" >	<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="687" height="448" viewBox="0 0 687 448">
 					<title></title>
 					<g id="icomoon-ignore">
@@ -26,6 +27,7 @@ const Cart = ({ cart, handleUpdateCartQty, handleRemoveFromCart, handleEmptyCart
 				<div className="grid-items">
 					<div className="grid-items-header">
 						<h4>items</h4>
+						{cart.line_items.length &&
 						<button onClick={handleEmptyCart}>
 							<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 768 768">
 							<title></title>
@@ -35,6 +37,7 @@ const Cart = ({ cart, handleUpdateCartQty, handleRemoveFromCart, handleEmptyCart
 							</svg>
 							<strong>Empty cart</strong>
 						</button>
+						}
 					</div>
 					{cart.line_items.map(item =>(
 						<CartItem 
@@ -43,6 +46,7 @@ const Cart = ({ cart, handleUpdateCartQty, handleRemoveFromCart, handleEmptyCart
 							handleRemoveFromCart={handleRemoveFromCart} 
 							handleUpdateCartQty={handleUpdateCartQty} />
 						) )}
+					{!cart.line_items.length && <div className="grid-no-items" >You have no items in your shoppin cart, <Link to="/">Start adding some!</Link></div> }
 				</div>
 			</div>
 		</div>

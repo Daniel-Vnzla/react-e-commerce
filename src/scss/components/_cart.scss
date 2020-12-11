@@ -39,6 +39,9 @@
 				background: #000;
 				border-radius: 5px;
 
+				&:active {
+					background: #aaa;
+				} 
 				svg {
 					width: 1.5rem;
 					height: 1.5rem;
@@ -71,6 +74,10 @@
 					color: #fff;
 					border-radius: 8px;
 
+					&:active {
+						background: #af0000;
+					}
+
 					strong {
 						margin-left: 8px;
 					}
@@ -83,6 +90,15 @@
 				}
 
 			}
+		}
+		.grid-no-items {
+			a {
+				color: blue;
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+
 		}
 	}
 }
