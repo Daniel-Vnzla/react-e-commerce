@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const Cart = ({ cart, handleUpdateCartQty, handleRemoveFromCart, handleEmptyCart }) => {
 
 	if (!cart.line_items) return "loading..."
-		console.log(cart)
+
   return (
     <section>
 		<div className="cart">

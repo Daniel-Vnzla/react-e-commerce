@@ -3,9 +3,9 @@ import "./scss/styles.scss";
 import { commerce } from './lib/commerce.js';
 import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
-import Products from './components/products/Products.jsx';
-import Header from './components/header/Header.jsx';
-import Cart from './components/cart/Cart.jsx';
+import Products from './components/Products/Products.jsx';
+import Header from './components/Header/Header.jsx';
+import Cart from './components/Cart/Cart.jsx';
 
 const App = (props) => {
   const [ products, setProducts ] = useState([]);
