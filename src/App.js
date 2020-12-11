@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import "./scss/styles.scss";
 import { commerce } from './lib/commerce.js';
+import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
 import Products from './components/products/Products.jsx';
 import Header from './components/header/Header.jsx';
@@ -31,11 +32,19 @@ const App = (props) => {
   },[])
 
   return (
-    <main>
-      {/* <Header totalCartItems={cart.total_items}/> */}
-      {/* <Products products={products} onAddToCart={handleAddToCart} /> */}
-      <Cart />
-    </main>
+    <Router>
+      <main>
+        <Header totalCartItems={cart.total_items}/>
+        <Switch>
+          <Route exact path="/">
+            <Products products={products} onAddToCart={handleAddToCart} />
+          </Route>
+          <Route exact path="/cart" >
+            <Cart cart={cart} />
+          </Route>
+        </Switch>
+      </main>
+    </Router>
   )
 }
 

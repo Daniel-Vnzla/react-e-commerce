@@ -12,15 +12,14 @@
 		max-width: 1200px;
 		width: 90%;
 		margin: 0 auto;
-		display: grid;
-		grid-template-columns: 1fr 6fr;
-		grid-gap: 40px;
 
 		.grid-checkout-card {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
 			text-align: center;
-			box-shadow: $box-shadow;
 			padding: 20px;
-			border-radius: $border-radius; 
+			margin-bottom: 30px;
 
 			h3 {
 				font-size: 1.2rem;
@@ -32,7 +31,6 @@
 			}
 
 			a {
-				margin-top: 30px;
 				display: flex;
 				justify-content: center;
 				align-items: center;
@@ -51,10 +49,9 @@
 
 		.grid-items {
 			display: grid;
-			grid-gap: 10px;
-			box-shadow: $box-shadow;
-			padding: 20px 0;
-			border-radius: $border-radius; 
+			grid-gap: 20px;
+			padding: 20px 10px;
+
 
 			.grid-items-header {
 				display: flex;
