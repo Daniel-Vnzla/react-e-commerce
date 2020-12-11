@@ -1,14 +1,14 @@
 import React from 'react';
 
-const CustomSelect = ({ options, label, name }) => {
+const CustomSelect = ({ options, label, name, onChange }) => {
   return (
-  	<div class="custom-input">			
-			<select id={name} name={name}>
-				{options.map(option => (
-					<option value={option}>{option}</option>
+  	<div className="custom-input">			
+			<select id={name} name={name} onChange={onChange}>
+				{options.map(({ id, label })=> (
+					<option key={id} value={label}>{label}</option>
 					))}
 			</select>
-			<label for={name}>
+			<label htmlFor={name}>
 				{label}				
 			</label>
 		</div>

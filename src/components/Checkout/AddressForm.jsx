@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { commerce } from '../../lib/commerce.js';
 
 import CustomInput from './CustomInput.jsx';
 import CustomSelect from './CustomSelect.jsx';
 
-const AddressForm = (props) => {
+const AddressForm = ({ checkoutToken }) => {
 	const [shippingCountries, setShippingCountries] = useState([]);
   const [shippingCountry, setShippingCountry] = useState('');
   const [shippingSubdivisions, setShippingSubdivisions] = useState([]);
@@ -14,15 +14,23 @@ const AddressForm = (props) => {
 
 	const options = [1,2,3];
 
+	console.log(shippingCountry)
+
   const fetchShippingCountries = async (checkoutTokenId) => {
     const { countries } = await commerce.services.localeListShippingCountries(checkoutTokenId);
 
-    setShippingCountries(countries);
+    const formattedCountries = Object.entries(countries).map(([code, name]) => ({ id: code, label: name }))
+
+    setShippingCountries(formattedCountries);
     setShippingCountry(Object.keys(countries)[0]);
   };
-	
+
+  useEffect(() => {
+  	fetchShippingCountries(checkoutToken.id);
+  },[])
+
   return (
-    <form class="form" >
+    <form className="form" >
 	    <h4>Ship Address</h4>
 			<CustomInput name="firstName" label="First Name"  type="text"/>
 			<CustomInput name="lastName" label="Last Name"  type="text"/>
@@ -31,11 +39,12 @@ const AddressForm = (props) => {
 			<CustomInput name="city" label="City"  type="text"/>
 			<CustomInput name="zip" label="ZIP / Postal code"  type="text"/>
 
-			<div class="select-container">
+			<div className="select-container">
 				<CustomSelect 
+					onChange={({ target }) => setShippingCountry(target.value)}
 					name="ShippingCountry"
 					label="Shipping Country" 
-					options={options} />
+					options={shippingCountries} />
 				<CustomSelect 
 					name="ShippingSubdivision"
 					label="Shipping Subdivision" 

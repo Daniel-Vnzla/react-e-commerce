@@ -55,7 +55,7 @@ const App = (props) => {
             <Products products={products} onAddToCart={handleAddToCart} />
           </Route>
           <Route exact path="/checkout">
-            <Checkout />
+            <Checkout cart={cart} />
           </Route>
           <Route exact path="/cart" >
             <Cart 
