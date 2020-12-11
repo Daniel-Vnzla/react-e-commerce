@@ -14,21 +14,21 @@ const AddressForm = ({ checkoutToken }) => {
 
 	const options = [1,2,3];
 
+	const formatSelectItems = (arr) => (
+		Object.entries(arr).map(([code, name]) => ({ id: code, label: name }))
+	)
+
   const fetchShippingCountries = async (checkoutTokenId) => {
     const { countries } = await commerce.services.localeListShippingCountries(checkoutTokenId);
 
-    const formattedCountries = Object.entries(countries).map(([code, name]) => ({ id: code, label: name }))
-
-    setShippingCountries(formattedCountries);
+    setShippingCountries(formatSelectItems(countries));
     setShippingCountry(Object.keys(countries)[0]);
   };
 
   const fetchSubdivisions = async (countryCode) => {
     const { subdivisions } = await commerce.services.localeListSubdivisions(countryCode);
 
-    const formattedSubdivisions = Object.entries(subdivisions).map(([code, name]) => ({ id: code, label: name }))
-
-    setShippingSubdivisions(formattedSubdivisions);
+    setShippingSubdivisions(formatSelectItems(subdivisions));
     setShippingSubdivision(Object.keys(subdivisions)[0]);
   };
 
