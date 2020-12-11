@@ -1,8 +1,6 @@
 import React from 'react';
 import ProductCard from './ProductCard.jsx';
 
-import img from '../../assets/Headphones Headset with Apple Microphone Headphones Headphones - headphones.png';
-
 
 const Products = ({ products, onAddToCart }) => {
   return (
