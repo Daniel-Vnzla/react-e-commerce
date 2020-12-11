@@ -4,6 +4,7 @@ import { commerce } from './lib/commerce.js';
 
 import Products from './components/products/Products.jsx';
 import Header from './components/header/Header.jsx';
+import Cart from './components/cart/Cart.jsx';
 
 const App = (props) => {
   const [ products, setProducts ] = useState([]);
@@ -31,8 +32,9 @@ const App = (props) => {
 
   return (
     <main>
-      <Header totalCartItems={cart.total_items}/>
-      <Products products={products} onAddToCart={handleAddToCart} />
+      {/* <Header totalCartItems={cart.total_items}/> */}
+      {/* <Products products={products} onAddToCart={handleAddToCart} /> */}
+      <Cart />
     </main>
   )
 }
