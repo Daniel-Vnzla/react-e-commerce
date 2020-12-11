@@ -1,14 +1,17 @@
 import React from 'react';
 import CartItem from './CartItem.jsx';
 
-const Cart = (props) => {
+const Cart = ({ cart }) => {
+
+	if (!cart.line_items) return "loading..."
+		
   return (
     <section>
-		<div class="cart">
+		<div className="cart">
 			<h2>Shopping cart</h2>
-			<div class="grid">
-				<div class="grid-checkout">
-					<div class="grid-checkout-card">
+			<div className="grid">
+				<div className="grid-checkout">
+					<div className="grid-checkout-card">
 						<h3>Total</h3>
 						<strong>3555$</strong>
 						<a href="/checkout" >	<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="687" height="448" viewBox="0 0 687 448">
@@ -20,8 +23,8 @@ const Cart = (props) => {
 				Checkout</a>
 					</div>
 				</div>
-				<div class="grid-items">
-					<div class="grid-items-header">
+				<div className="grid-items">
+					<div className="grid-items-header">
 						<h4>items</h4>
 						<button>
 							<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 768 768">
@@ -33,7 +36,9 @@ const Cart = (props) => {
 							<strong>Clear cart</strong>
 						</button>
 					</div>
-					<CartItem />
+					{cart.line_items.map(item =>(
+						<CartItem key={item.id} item={item} />
+						) )}
 				</div>
 			</div>
 		</div>

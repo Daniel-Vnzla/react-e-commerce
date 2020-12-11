@@ -1,20 +1,20 @@
 import React from 'react';
 
-const CarditemCart = (props) => {
+const CartItem = ({ item }) => {
   return (
-		<div class="product-card-vertical">
-			<img src="images/Headphones Headset with Apple Microphone Headphones Headphones - headphones.png" alt="imagen" />
-			<div class="product-card-vertical-info">
-				<h3>Headphone bing</h3>
-				<strong>Quantity: 1</strong>
+		<div className="product-card-vertical">
+			<img src={item.media.source} alt="imagen" />
+			<div className="product-card-vertical-info">
+				<h3>{item.name}</h3>
+				<strong>Quantity: {item.quantity}</strong>
 			</div>
-			<strong class="price">1550$</strong>
-			<div class="product-card-vertical-quantity-controls">
+			<strong className="price">{item.line_total.formatted_with_symbol}</strong>
+			<div className="product-card-vertical-quantity-controls">
 				<button>-</button>
-				<input type="number" min="1" value="1" />
+				<input type="number" min="1" value={item.quantity} />
 				<button>+</button>
 			</div>
-			<div class="product-card-vertical-actions">
+			<div className="product-card-vertical-actions">
 				<button>
 			
 					<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 768 768">
@@ -29,4 +29,4 @@ const CarditemCart = (props) => {
   )
 }
 
-export default CarditemCart;
+export default CartItem;
