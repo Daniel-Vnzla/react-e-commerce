@@ -4,7 +4,6 @@
 
 	select,
 	input {
-		font-weight: bold;
 		width: 100%;
 		font-size: 1rem;
 		padding: 12px 15px;
@@ -24,6 +23,7 @@
 
 	input:valid ~ label,
 	input:focus ~ label {
+		font-weight: bold;
 		font-size: .6rem;
 		top: -8px;
 		color: #000;
@@ -36,7 +36,6 @@
 		position: absolute;
 		top: 50%;
 		left: 15px;
-		font-weight: bold;
 		pointer-events: none;
 		transform: translateY(-50%);
 		transition: 

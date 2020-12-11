@@ -20,9 +20,9 @@
 
 		.address-form-actions {
 			margin-top: 30px;
-			display: grid;
-			grid-gap: 20px;
-			grid-template-columns: repeat(2,1fr);
+			display: flex;
+			justify-content: space-between;
+			align-items: center;	
 			grid-column: 1 / 3;
 
 			button[type="submit"] {
@@ -31,7 +31,7 @@
 				border-radius: 5px;
 				font-size: 1.2rem;
 				color: #fff;
-				padding: 15px;
+				padding: 15px 20px;
 				font-weight: bold;
 			}
 
@@ -43,7 +43,7 @@
 				border-radius: 5px;
 				font-size: 1.2rem;
 				color: #fff;
-				padding: 15px;
+				padding: 15px 20px;
 				font-weight: bold;
 			}
 		}
