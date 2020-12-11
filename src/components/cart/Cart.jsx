@@ -1,4 +1,5 @@
 import React from 'react';
+import CartItem from './CartItem.jsx';
 
 const Cart = (props) => {
   return (
@@ -32,6 +33,7 @@ const Cart = (props) => {
 							<strong>Clear cart</strong>
 						</button>
 					</div>
+					<CartItem />
 				</div>
 			</div>
 		</div>
