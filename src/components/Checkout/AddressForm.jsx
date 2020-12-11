@@ -13,6 +13,14 @@ const AddressForm = (props) => {
   const [shippingOption, setShippingOption] = useState('');
 
 	const options = [1,2,3];
+
+  const fetchShippingCountries = async (checkoutTokenId) => {
+    const { countries } = await commerce.services.localeListShippingCountries(checkoutTokenId);
+
+    setShippingCountries(countries);
+    setShippingCountry(Object.keys(countries)[0]);
+  };
+	
   return (
     <form class="form" >
 	    <h4>Ship Address</h4>
