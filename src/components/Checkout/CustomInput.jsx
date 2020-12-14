@@ -1,12 +1,16 @@
 import React from 'react';
 
-const CustomInput = ({ label, name, type }) => {
-  return (
-   <div className="custom-input">
-			<input id={name} type={type} name={name} required />
-			<label htmlFor={name}>{label}</label>
+class CustomInput extends React.Component {
+	constructor(props){
+			super(props);
+		}
+
+  render () {
+  	return <div className="custom-input">
+			<input onChange={this.props.onChange} id={this.props.name} type="text" name={this.props.name} required />
+			<label htmlFor={this.props.name}>{this.props.label}</label>
 		</div>
-  )
+  }
 }
 
 export default CustomInput;

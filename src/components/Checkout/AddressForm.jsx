@@ -3,7 +3,7 @@ import { commerce } from '../../lib/commerce.js';
 import { Link } from 'react-router-dom';
 import { useForm, FormProvider } from 'react-hook-form';
 
-import CustomInput from './CustomInput.jsx';
+import FormInput from './FormInput.jsx';
 import CustomSelect from './CustomSelect.jsx';
 
 const AddressForm = ({ checkoutToken, next }) => {
@@ -58,12 +58,12 @@ const AddressForm = ({ checkoutToken, next }) => {
   	<FormProvider {...methods}>
 	    <form className="form" onSubmit={methods.handleSubmit((data) => next({ ...data, shippingCountry, shippingOption, shippingSubdivision }))}>
 		    <h4>Ship Address</h4>
-				<CustomInput name="firstName" label="First Name*"  type="text"/>
-				<CustomInput name="lastName" label="Last Name*"  type="text"/>
-				<CustomInput name="address1" label="Address*"  type="text"/>
-				<CustomInput name="email" label="Email*"  type="email"/>
-				<CustomInput name="city" label="City*"  type="text"/>
-				<CustomInput name="zip" label="ZIP / Postal code*"  type="text"/>
+				<FormInput name="firstName" label="First Name*" />
+				<FormInput name="lastName" label="Last Name*" />
+				<FormInput name="address1" label="Address*" />
+				<FormInput name="email" label="Email*" />
+				<FormInput name="city" label="City*" />
+				<FormInput name="zip" label="ZIP / Postal code*" />
 
 				<div className="select-container">
 					<CustomSelect 

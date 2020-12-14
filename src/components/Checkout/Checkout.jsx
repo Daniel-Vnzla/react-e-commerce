@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { commerce } from '../../lib/commerce.js';
+import { Link } from 'react-router-dom';
 
 import AddressForm from './AddressForm.jsx';
 import PaymentForm from './PaymentForm.jsx';
@@ -29,15 +30,27 @@ const Checkout = ({ cart, order, onCaptureCheckout, error }) => {
 	const backStep = () => setActiveStep((prevActiveStep) => prevActiveStep - 1 );
 
   const next = (data) => {
+  	console.log(data)
   	setShippingData(data)
   	nextStep();
   }
 
-	const Confimation = () => (
+	let Confimation = () => order.customer ? (
 		<div>
-			Confimation
+			<h4>Thanks your for your purchase, { order.customer.firstName }, { order.customer.lastName }</h4>
+			<strong>Ref: { order.customer_reference }</strong>
+			<Link to="/">Back to Home</Link>
 		</div>
-		)
+	) : (
+		<div>Loading...</div>
+	)
+
+	if (error) {
+		<>
+			<div>Error: { error }</div>
+			<Link to="/">Back to Home</Link>
+		</>
+	}
 
 	const Form = () => activeStep === 0
 		? <AddressForm checkoutToken={checkoutToken} next={next} />

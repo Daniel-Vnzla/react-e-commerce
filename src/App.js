@@ -49,6 +49,7 @@ const App = (props) => {
   }
 
   const handleCaptureCheckout = async (checkoutTokenId, newOrder) => {
+    console.log(newOrder)
     try {
       const incomingOrder = await commerce.checkout.capture(checkoutTokenId, newOrder);
       setOrder(incomingOrder);
