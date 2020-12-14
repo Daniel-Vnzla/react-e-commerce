@@ -17,10 +17,29 @@
 		justify-content: space-between;
 		align-items: center;
 		padding: 10px;
+		text-align-last: left;
 
 		.list-info strong {
 			color: #ddd;
 			font-size: .9rem;
 		}
+	}
+	
+	.total {
+		margin-top: 20px;
+		width: 100%;
+		text-align-last: center;
+		display: flex;
+		justify-content: space-between;
+		padding: 12px;
+
+		h6 {
+			font-size: 1.2rem;
+		}
+
+		strong {
+			font-size: 1.2rem;
+		}
+		border-bottom: 1px solid #ddd;
 	}
 }
