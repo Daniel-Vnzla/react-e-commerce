@@ -60,11 +60,14 @@
 			content: none;
 		}
 
-		.active::after,
 		.active::before,
 		.active {
 			color: #5ee65e;
 			border-color: #5ee65e;
+		}
+		
+		.active::after {
+			background: #5ee65e;
 		}
 	}
 }
