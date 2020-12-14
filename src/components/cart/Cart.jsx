@@ -15,13 +15,13 @@ const Cart = ({ cart, handleUpdateCartQty, handleRemoveFromCart, handleEmptyCart
 					<div className="grid-checkout-card">
 						<h3>Total</h3>
 						<strong>{cart.subtotal.formatted_with_symbol}</strong>
-						<a href="/checkout" >	<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="687" height="448" viewBox="0 0 687 448">
+						<Link to="/checkout" >	<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="687" height="448" viewBox="0 0 687 448">
 					<title></title>
 					<g id="icomoon-ignore">
 					</g>
 						<path fill="#fff" d="M381 390.25c0 22.75-18.25 41-41 41s-41.25-18.25-41.25-41 18.5-41.25 41.25-41.25 41 18.5 41 41.25zM193.75 390.25c0 22.75-18.5 41-41.25 41s-41-18.25-41-41 18.25-41.25 41-41.25 41.25 18.5 41.25 41.25zM0 16.75c73.75 77.75 143 89.25 415 89.25s152.5 60.5-15.5 210.5c53.25-92.5 236.25-174.5-63.75-170-287.75 4.25-304.75-83.25-335.75-129.75z"></path>
 					</svg>
-				Checkout</a>
+				Checkout</Link>
 					</div>
 				</div>
 				<div className="grid-items">

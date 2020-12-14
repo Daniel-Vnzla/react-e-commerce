@@ -12,7 +12,7 @@ const Header = ({ totalCartItems }) => {
 					<li><Link to="/products" >Explore</Link></li>
 				</ul>
 					{ pathname === "/" && 
-					<Link to="/cart" className="icon cart" data-quantity={ totalCartItems > 99 ? "99+" : totalCartItems } >
+					<Link to="/cart" className="icon icon-cart" data-quantity={ totalCartItems > 99 ? "99+" : totalCartItems } >
 					<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="687" height="448" viewBox="0 0 687 448">
 					<title></title>
 					<g id="icomoon-ignore">

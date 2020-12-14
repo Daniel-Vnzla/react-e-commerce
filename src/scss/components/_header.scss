@@ -53,7 +53,7 @@
 		
 		.icon {
 			position: relative;
-		}	
+		}
 
 		.icon svg {
 			animation: $fade-in-top;
@@ -63,7 +63,7 @@
 			height: 60px;
 		}
 
-		.cart {
+		.icon-cart {
 			position: relative;
 
 			&::after {

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { commerce } from '../../lib/commerce.js';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 import AddressForm from './AddressForm.jsx';
 import PaymentForm from './PaymentForm.jsx';
@@ -12,6 +12,7 @@ const Checkout = ({ cart, order, onCaptureCheckout, error }) => {
 	const [checkoutToken, setCheckoutToken] = useState(null);
 	const [shippingData, setShippingData ] = useState({});
 	const [ isFinished, setFinished ] = useState(false);
+	const history = useHistory();
 
 	const generateToken = async () => {
 		if (!cart.id) return
@@ -20,6 +21,7 @@ const Checkout = ({ cart, order, onCaptureCheckout, error }) => {
 			setCheckoutToken(token);
 		}
 		catch(err){
+			history.push('/')
 			console.log(err);
 		}
 	}
