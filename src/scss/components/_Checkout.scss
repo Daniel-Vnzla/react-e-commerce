@@ -67,4 +67,21 @@
 			background: #5ee65e;
 		}
 	}
+
+	.confimation {
+		h4 {
+			margin-top: 20px;
+			font-size: 2rem;
+			margin-bottom: 30px;
+		}
+
+		a {
+			display: inline;
+			background: #3c46c5;
+			padding: 10px 30px;
+			border: 1px solid gray;
+			color: #fff;
+			border-radius: 5px;
+		}
+	}
 }
