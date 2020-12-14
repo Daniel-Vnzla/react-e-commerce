@@ -24,7 +24,7 @@ const Checkout = ({ cart, order, onCaptureCheckout, error }) => {
 		}
 	}
 	useEffect(() => {
-		generateToken();
+		generateToken();  // eslint-disable-next-line 
 	},[cart]);
 
 	const nextStep = () => setActiveStep((prevActiveStep) => prevActiveStep + 1 );
@@ -34,7 +34,6 @@ const Checkout = ({ cart, order, onCaptureCheckout, error }) => {
   	setShippingData(data)
   	nextStep();
   }
-
 
   const timeout = () => {
   	setTimeout(() => {

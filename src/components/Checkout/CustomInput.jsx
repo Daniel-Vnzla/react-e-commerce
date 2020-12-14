@@ -1,10 +1,6 @@
 import React from 'react';
 
 class CustomInput extends React.Component {
-	constructor(props){
-			super(props);
-		}
-
   render () {
   	return <div className="custom-input">
 			<input onChange={this.props.onChange} id={this.props.name} type="text" name={this.props.name} required />
