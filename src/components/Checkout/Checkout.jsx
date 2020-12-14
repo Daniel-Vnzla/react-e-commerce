@@ -41,15 +41,15 @@ const Checkout = ({ cart }) => {
 
 	const Form = () => activeStep === 0
 		? <AddressForm checkoutToken={checkoutToken} next={next} />
-		: <PaymentForm />
+		: <PaymentForm checkoutToken={setShippingData} checkoutToken={checkoutToken} backStep={backStep}/>
 	
   return (
     <section>
 		<div className="checkout">
 			<h2>Checkout</h2>
 			<ul className="steps">
-				<li className="active">1 Ship Address </li>
-				<li>2 Payment</li>
+				<li className={activeStep === 0 ? "active": ""}>1 Ship Address </li>
+				<li className={activeStep === 1 ? "active" : ""}>2 Payment</li>
 			</ul>
 				{activeStep === steps.length ? <Confimation /> : checkoutToken && <Form />}
 		</div>

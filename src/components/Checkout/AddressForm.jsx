@@ -56,7 +56,7 @@ const AddressForm = ({ checkoutToken, next }) => {
 
   return (
   	<FormProvider {...methods}>
-	    <form className="form" handleSubmit={methods.handleSubmit((data) => next({ ...data, shippingCountry, shippingOption, shippingSubdivision }))}>
+	    <form className="form" onSubmit={methods.handleSubmit((data) => next({ ...data, shippingCountry, shippingOption, shippingSubdivision }))}>
 		    <h4>Ship Address</h4>
 				<CustomInput name="firstName" label="First Name*"  type="text"/>
 				<CustomInput name="lastName" label="Last Name*"  type="text"/>
