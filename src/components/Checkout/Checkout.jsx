@@ -11,6 +11,7 @@ const Checkout = ({ cart, order, onCaptureCheckout, error }) => {
 	const [ activeStep, setActiveStep ] = useState(0);
 	const [checkoutToken, setCheckoutToken] = useState(null);
 	const [shippingData, setShippingData ] = useState({});
+	const [ isFinished, setFinished ] = useState(false);
 
 	const generateToken = async () => {
 		if (!cart.id) return
@@ -30,18 +31,29 @@ const Checkout = ({ cart, order, onCaptureCheckout, error }) => {
 	const backStep = () => setActiveStep((prevActiveStep) => prevActiveStep - 1 );
 
   const next = (data) => {
-  	console.log(data)
   	setShippingData(data)
   	nextStep();
   }
 
+
+  const timeout = () => {
+  	setTimeout(() => {
+  		setFinished(true);
+  	}, 3000);
+  }
+
 	let Confimation = () => order.customer ? (
-		<div>
+		<div className="confimation">
 			<h4>Thanks your for your purchase, { order.customer.firstName }, { order.customer.lastName }</h4>
 			<strong>Ref: { order.customer_reference }</strong>
 			<Link to="/">Back to Home</Link>
 		</div>
-	) : (
+	) : isFinished ? (
+		<div className="confimation">
+			<h4>Thanks your for your purchase</h4>
+			<Link to="/">Back to Home</Link>
+		</div>
+	) :(
 		<div>Loading...</div>
 	)
 
@@ -54,7 +66,7 @@ const Checkout = ({ cart, order, onCaptureCheckout, error }) => {
 
 	const Form = () => activeStep === 0
 		? <AddressForm checkoutToken={checkoutToken} next={next} />
-		: <PaymentForm shippingData={setShippingData} checkoutToken={checkoutToken} onBackStep={backStep} onNextStep={nextStep} onCaptureCheckout={onCaptureCheckout} />
+		: <PaymentForm shippingData={shippingData} checkoutToken={checkoutToken} onBackStep={backStep} onNextStep={nextStep} onCaptureCheckout={onCaptureCheckout} timeout={timeout} />
 	
   return (
     <section>
