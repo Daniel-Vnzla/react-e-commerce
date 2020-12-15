@@ -5,7 +5,7 @@ const ProductCard = ({ product, onAddToCart }) => {
     <div className="products-card" style={{ "--bg-color": product.variants[0].name }}>
 			<img onLoad={({ target }) => target.style.opacity = 1 } src={product.media.source} alt="texto" />
 			<h3>{product.name}</h3>
-			<p>{product.description}</p>
+			<p dangerouslySetInnerHTML={{__html: product.description }}></p>
 			<div className="products-actions">
 				<button onClick={() => onAddToCart(product.id, 1) }> 
 					<div className="icon plus">
