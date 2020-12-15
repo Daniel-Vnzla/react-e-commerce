@@ -33,6 +33,10 @@
 			animation: $fade-in-top;
 			animation-delay: $animation-delay * 2;
 
+			.active::after {
+				transform: scale(1);
+			}
+
 			a {
 				position: relative;
 				font-weight: bold;
@@ -51,8 +55,9 @@
 				}
 
 				&:hover::after {
-						transform: scale(1);
-					}
+					transform: scale(1);
+				}
+
 				@media (max-width: 768px) {
 					font-size: .8rem;
 				}

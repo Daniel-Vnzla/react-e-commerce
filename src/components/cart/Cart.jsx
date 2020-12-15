@@ -8,7 +8,7 @@ const Cart = ({ cart, handleUpdateCartQty, handleRemoveFromCart, handleEmptyCart
 
 	if (!cart.line_items) {
 		return (
-			<div style={{display: "flex", justifyContent: "center", marginTop: "190px"}}>
+			<div className="loading">
 				<Loading />
 			</div>
 		)

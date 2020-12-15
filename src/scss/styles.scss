@@ -25,9 +25,6 @@
 }
 
 
-
-
-
 * {
 	padding: 0;
 	margin: 0;
@@ -93,3 +90,9 @@ img {
 	object-fit: contain;
 }
 
+.loading {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 190px;
+}

@@ -1,7 +1,12 @@
 import React from 'react';
 import ProductCard from './ProductCard.jsx';
+import Loading from '../common/Loading.jsx';
 
 const Products = ({ products, onAddToCart }) => {
+
+	if (!products.length){ 
+		return (<div className="loading"> <Loading /> </div>)
+	}
 
   return (
   	<section className="products">
