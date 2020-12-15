@@ -6,12 +6,17 @@
 	h2 {
 		font-size: 4rem;
 		margin-bottom: 50px;
+
+		@media (max-width: 768px) {
+			font-size: 3rem;
+		}
 	}
 
 	.grid {
 		max-width: 1200px;
 		width: 90%;
 		margin: 0 auto;
+
 
 		.grid-checkout-card {
 			display: flex;
@@ -48,6 +53,9 @@
 					height: 1.5rem;
 					margin-right: 8px;
 				}
+			}
+			@media (max-width: 640px) {
+				flex-direction: column;
 			}
 		}
 

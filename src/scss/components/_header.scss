@@ -12,10 +12,15 @@
 	z-index: 2;
 	background: #fff;
 
+
 	h1 {
 		animation: $fade-in-top;
 		animation-delay: $animation-delay;
 		font-size: $title;
+
+		@media (max-width: 768px) {
+			font-size: 1rem;
+		}
 	}
 
 	nav {
@@ -48,6 +53,9 @@
 				&:hover::after {
 						transform: scale(1);
 					}
+				@media (max-width: 768px) {
+					font-size: .8rem;
+				}
 			}
 		}		 
 		

@@ -13,6 +13,11 @@
 		margin-left: 5px;
 	}
 
+	@media (max-width: 768px) {
+		display: inline;
+		height: auto;
+	}
+
 	.product-card-vertical-info {
 		text-align: left;
 		font-size: .7rem;
@@ -21,6 +26,13 @@
 		strong {
 			font-size: .6rem;
 			color: #adadad;
+		}
+
+
+		@media (max-width: 768px) {
+			margin-top: 15px;
+			text-align: center;
+			font-size: 1rem;
 		}
 	}
 
@@ -77,14 +89,24 @@
 			&:active {
 				background: #af0000;
 			}
- 		}
 
+			@media (max-width: 768px) {
+				display: block;
+				border-radius: 0;
+				width: 100%;
+			}
+ 		}
 
 		svg {
 			margin-left: 4px;
 			margin-top: 4px;
 			width: 1.2rem;
 			height: 1.2rem;
+		}
+
+		@media (max-width: 768px) {
+			margin-top: 10px;
+			margin-left: 0;
 		}
 	}
 }

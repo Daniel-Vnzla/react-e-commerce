@@ -6,6 +6,15 @@
 		margin-bottom: 20px;
 	}
 
+	.list-item {
+		@media (max-width: 768px) {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+		}
+	}
+
 	.payment-method {
 		text-align-last: left;
 		margin-top: 10px;
@@ -22,6 +31,13 @@
 		width: 100%;
 		padding: 10px;
 		justify-content: space-between;
+
+		@media (max-width: 768px) {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+		}
 
 		button {
 		margin-top: 40px;

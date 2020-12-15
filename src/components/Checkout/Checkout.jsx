@@ -4,6 +4,7 @@ import { Link, useHistory } from 'react-router-dom';
 
 import AddressForm from './AddressForm.jsx';
 import PaymentForm from './PaymentForm.jsx';
+import Loading from '../common/Loading.jsx';
 
 const steps = ["Shipping address", "Payment details"]
 
@@ -55,7 +56,7 @@ const Checkout = ({ cart, order, onCaptureCheckout, error }) => {
 			<Link to="/">Back to Home</Link>
 		</div>
 	) :(
-		<div>Loading...</div>
+		<Loading />
 	)
 
 	if (error) {
@@ -75,7 +76,7 @@ const Checkout = ({ cart, order, onCaptureCheckout, error }) => {
 			<h2>Checkout</h2>
 			<ul className="steps">
 				<li className="active" >1 Ship Address </li>
-				<li className={activeStep === 1 ? "active" : ""}>2 Payment</li>
+				<li className={activeStep >= 1 ? "active" : ""}>2 Payment</li>
 			</ul>
 				{activeStep === steps.length ? <Confimation /> : checkoutToken && <Form />}
 		</div>
