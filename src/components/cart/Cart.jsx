@@ -1,10 +1,18 @@
 import React from 'react';
-import CartItem from './CartItem.jsx';
 import { Link } from 'react-router-dom';
+
+import CartItem from './CartItem.jsx';
+import Loading from '../common/Loading.jsx';
 
 const Cart = ({ cart, handleUpdateCartQty, handleRemoveFromCart, handleEmptyCart }) => {
 
-	if (!cart.line_items) return "loading..."
+	if (!cart.line_items) {
+		return (
+			<div style={{display: "flex", justifyContent: "center", marginTop: "190px"}}>
+				<Loading />
+			</div>
+		)
+	} 
 
   return (
     <section>

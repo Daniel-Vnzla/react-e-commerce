@@ -1,8 +1,8 @@
 import React from 'react';
 import ProductCard from './ProductCard.jsx';
 
-
 const Products = ({ products, onAddToCart }) => {
+
   return (
   	<section className="products">
   		<h2>Headphones</h2>	

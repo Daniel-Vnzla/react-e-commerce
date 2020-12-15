@@ -1,4 +1,4 @@
-import React, { useState, useEffect, onDestroy } from 'react';
+import React, { useState, useEffect } from 'react';
 import "./scss/styles.scss";
 import { commerce } from './lib/commerce.js';
 import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
@@ -13,7 +13,6 @@ const App = (props) => {
   const [ cart, setCart ] = useState({});
   const [ order, setOrder ] = useState({});
   const [ errorMessage, setErrorMessage ] = useState('');
-  const [ itemAdded, setItemAdded ] = useState(false);
 
   const fetchProducts = async () => {
     const { data } = await commerce.products.list();

@@ -5,6 +5,7 @@ import { useForm, FormProvider } from 'react-hook-form';
 
 import FormInput from './FormInput.jsx';
 import CustomSelect from './CustomSelect.jsx';
+import Loading from '../common/Loading.jsx';
 
 const AddressForm = ({ checkoutToken, next }) => {
 	const [shippingCountries, setShippingCountries] = useState([]);
@@ -54,6 +55,8 @@ const AddressForm = ({ checkoutToken, next }) => {
 	  if (shippingSubdivision) fetchShippingOptions(checkoutToken.id, shippingCountry ,shippingSubdivision);  // eslint-disable-next-line 
   },[shippingSubdivision])
 
+
+  if (!shippingOptions || !shippingCountries || !shippingSubdivision) return <Loading />
   return (
   	<FormProvider {...methods}>
 	    <form className="form" onSubmit={methods.handleSubmit((data) => next({ ...data, shippingCountry, shippingOption, shippingSubdivision }))}>
