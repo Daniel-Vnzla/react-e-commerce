@@ -9,7 +9,7 @@ const Header = ({ totalCartItems }) => {
 			<h1><Link to="/" >E-Commerce</Link></h1>
 			<nav className="navbar">
 				<ul>
-					<li><Link to="/products" >Explore</Link></li>
+					<li><Link to="" className={ pathname === "/" ? "active" : ""} >Explore</Link></li>
 				</ul>
 					{ pathname === "/" && 
 					<Link to="/cart" className="icon icon-cart" data-quantity={ totalCartItems > 99 ? "99+" : totalCartItems } >

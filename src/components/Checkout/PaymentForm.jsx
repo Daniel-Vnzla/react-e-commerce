@@ -49,6 +49,7 @@ const handleSubmit = async (event, elements, stripe) => {
 							{({ elements, stripe }) => (
 								<form onSubmit={(e) => handleSubmit(e, elements, stripe)}>
 									<CardElement />
+                  <p className="test">Creadit Card for testing: 4242 4242 4242 4242 | 04/24 | 242 | 42424 </p>
 									<br />
 									<div className="actions">
 										<button onClick={onBackStep} >Back</button>
